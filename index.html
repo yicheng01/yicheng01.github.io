@@ -3,17 +3,25 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
+	  <meta name="viewport" content="width=device-width">
 </head>
 <style type="text/css">
 	html{
+		margin-top: 0px;
 		width:100%;
 		height:100%;
 	}
 	body{
 		width:100%;
 		height:100%;
+		display: flex;
+
 	}
 	#menu{
+
+		margin-top: -10px;
+		opacity: 0.5;
+		position: fixed;
 		text-align: center;
 		background: #30E496;
 		max-width: 65px;
@@ -21,6 +29,7 @@
 		border: 2px dashed black;
 	}
 	#menu:hover{
+		opacity: 1;
 		background:#00ffff;
 		transition:all 0.5s linear ;
 		 transform: scale(1.3);
@@ -29,9 +38,10 @@
 	#menuContent{
 		display: none;
 		flex-direction: column;
-		width: 32%;
-		height:100%;
+		width: 10%;
+		height:200px;
 		border: 5px dashed black;
+		position: fixed;
 	}
 	.menuItem:hover{
 		background: #99ffff;
@@ -40,10 +50,63 @@
 	  text-decoration: none;
 	  color: black;
 	}
+	a:hover{
+		color:#00a3cc;
+	}
 	h1{
+		display: inline-block;
+	}
+	h2{
 		font-size:100%;
 	}
+    #articleContent{
+    	width:auto;
+    	height:100%;
+    	margin-left:5%;
+    	margin-right:5%; 
+    	text-align:center;
+    }
+    .articleInner{
+		border-bottom:1px solid black;
+	}
+    #realArticle{
+    	position:fixed;
+    	margin-left:15%; 
+    	width:70%;
+    	height: 80%;
+    	background: white;
+    	overflow: scroll;
+    	display: none;
+    }
 
+
+
+
+
+/*@media only   */ 
+	@media only screen and (max-width: 601px) {
+	body{
+		width:95%;
+		height:100%;
+		display:block;	
+
+	}
+	#menuContent{
+		display: none;
+		flex-direction: column;
+		width: auto;
+		border: 5px dashed black;
+	}
+	#articleContent{
+    
+    	margin-left:0%;
+    }
+    #menu{
+    	margin-top: -25px;
+    }
+}
+
+/*@media only   */ 
 
 </style>
 
@@ -52,19 +115,47 @@
 	<div id="menuContent"> 
 
 		<div id="home" class="menuItem" style="width: 100%;
-		align-items: center;"><h1  style="text-align: center">Home</h1></div>
+		align-items: center;"><h2  style="text-align: center">Home</h1></div>
 
 		<div id="About" class="menuItem" style="width: 100%;
-		align-items: center;"><h1 style="text-align: center">About</h1></div>
+		align-items: center;"><h2 style="text-align: center">About</h1></div>
 		
 		<div id="Archive" class="menuItem" style="width: 100%;
-		align-items: center;"><h1 style="text-align: center">Archive</h1></div>
+		align-items: center;"><h2 style="text-align: center">Archive</h1></div>
 
 		<div id="Github" class="menuItem" style="width: 100%;
-		align-items: center;"><h1 style="text-align: center">Github</h1></div>
+		align-items: center;"><h2 style="text-align: center">Github</h1></div>
 
 
 	</div>
+
+	<div id="articleContent" style="">
+		<div class="articleInner" >
+			<a class="openArticle" ><h1>人之初性本善</h1></a>
+			<p>這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字...........</p>
+		</div>
+		
+		<div class="articleInner">
+			<a class="openArticle" ><h1>人之初性本善</h1></a>
+			<p>這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字...........</p>
+		</div>
+
+
+		
+		
+	</div>
+
+
+	<div id="realArticle">
+	  <h1>人之初性本善</h1></a>
+			<p>這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字...........</p>
+			<p>這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字...........</p>
+			<p>這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字...........</p>
+			<p>這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字...........</p>
+			<p>這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字...........</p>
+			<p>這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字...........</p>
+	</div>
+
 </body>
 
 
@@ -83,6 +174,11 @@ window.addEventListener('click',function(e){
 		document.getElementById('menu').style.display = 'block';
 	}
 
+	if(e.target.id!=='realArticle'&&e.target.nodeName!=='H1'){
+		document.getElementById('realArticle').style.display = 'none';
+		document.body.style.background = 'white';
+	}
+
 })
 
 
@@ -98,6 +194,38 @@ document.getElementById('About').addEventListener('click',function(){
 	 window.location.href ="http://www.w3schools.com";
 })
 
+//因document.getElementsByClassName返回的是類陣列，不是陣列，所以沒有foreach方法
+Array.prototype.forEach.call(document.getElementsByClassName('openArticle'),function(item){
+	item.addEventListener('click',function(){
+		document.getElementById('realArticle').style.display = 'block';
+		document.body.style.background = 'gray';
+	})
+})
+
+
+
+
+//Ajax讀取頁面
+loadhtml = function(url,callback) {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (xhttp.readyState == 4 && xhttp.status == 200) {
+   
+     var  response =  xhttp.responseText;
+     //將response訊息傳入callback
+      (callback)(response);
+      };
+  };
+  xhttp.open("GET", url, true);
+  xhttp.send();
+
+
+};
+
+  loadhtml('test.md',function(e){
+  		console.log(e)
+  		document.getElementById('realArticle').innerHTML = e
+  	});
 
 </script>
 </html>
