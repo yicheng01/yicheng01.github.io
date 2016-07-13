@@ -4,8 +4,11 @@
 	<meta charset="UTF-8">
 	<title>Document</title>
 	  <meta name="viewport" content="width=device-width">
+	  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.4.2/showdown.min.js"></script>
+	  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
 </head>
 <style type="text/css">
+
 	html{
 		margin-top: 0px;
 		width:100%;
@@ -71,6 +74,8 @@
 	}
     #realArticle{
     	position:fixed;
+    	top:5%;
+    	left:0px;
     	margin-left:15%; 
     	width:70%;
     	height: 80%;
@@ -145,7 +150,7 @@
 		
 	</div>
 
-
+<!--打開文章後的顯示方塊 -->
 	<div id="realArticle">
 	  <h1>人之初性本善</h1></a>
 			<p>這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字...........</p>
@@ -160,6 +165,11 @@
 
 
 <script type="text/javascript">
+
+
+var articles = {};
+
+
 	document.getElementById('menu').addEventListener('click',function(){
 		if(document.getElementById('menuContent').style.display!=='flex'){
 		  document.getElementById('menuContent').style.display = 'flex';
@@ -174,7 +184,7 @@ window.addEventListener('click',function(e){
 		document.getElementById('menu').style.display = 'block';
 	}
 
-	if(e.target.id!=='realArticle'&&e.target.nodeName!=='H1'){
+	if(e.target.id!=='realArticle'&&e.target.nodeName!=='H1'&&e.target.nodeName!=='P'&&e.target.parentNode.id!=='realArticle'&&e.target.parentNode.className!=='language-js'){
 		document.getElementById('realArticle').style.display = 'none';
 		document.body.style.background = 'white';
 	}
@@ -213,7 +223,9 @@ loadhtml = function(url,callback) {
    
      var  response =  xhttp.responseText;
      //將response訊息傳入callback
+     
       (callback)(response);
+
       };
   };
   xhttp.open("GET", url, true);
@@ -221,11 +233,36 @@ loadhtml = function(url,callback) {
 
 
 };
+var re = /[^#]\w+|[^#][\u0800-\u9fa5]+/i
+for( i = 1;i<6;i++){
+  (function (i){
+    loadhtml('./article/test'+i+'.md',function(e){
+  	  console.log(e)
+  	    articles[i] = e;
 
-  loadhtml('test.md',function(e){
-  		console.log(e)
-  		document.getElementById('realArticle').innerHTML = e
-  	});
+
+var node = document.createElement("DIV"); 
+var node1 = document.createElement("A");
+var node2 = document.createElement("H1");  
+node.setAttribute('class','articleInner');
+node1.setAttribute('class','openArticle');
+node2.innerHTML = e.match(re);
+node1.appendChild(node2);
+node.appendChild(node1);
+
+document.getElementById('articleContent').appendChild(node);
+  		/*
+  		var converter = new showdown.Converter()
+  		document.getElementById('realArticle').innerHTML =converter.makeHtml(e);
+  		*/
+  });})(i)
+}
+
+
+
+for(c=0;c<Object.keys(articles).length;c++){
+
+}
 
 </script>
 </html>
