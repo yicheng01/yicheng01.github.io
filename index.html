@@ -55,6 +55,7 @@
 	}
 	h1{
 		display: inline-block;
+		font-family:Microsoft JhengHei;
 	}
 	h2{
 		font-size:100%;
@@ -62,12 +63,14 @@
     #articleContent{
     	width:auto;
     	height:100%;
-    	margin-left:5%;
+    	margin-left:25%;
     	margin-right:5%; 
     	text-align:center;
     }
     .articleInner{
 		border-bottom:1px solid black;
+		max-height: 95%;
+		overflow-y: hidden;
 	}
     #realArticle{
     	position:fixed;
@@ -81,10 +84,13 @@
     	display: none;
     }
     .title{
-    	color:green;
+    	color:black;
+    	font-size: 45px;
     }
     .title:hover{
     	color:#00a3cc;
+    	text-decoration: underline;
+    	text-decoration-color: yellow;
     }
 
 
@@ -138,137 +144,16 @@
 	</div>
 
 	<div id="articleContent" style="">
-		<div class="articleInner" >
-			<a class="openArticle" ><h1>人之初性本善</h1></a>
-			<p>這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字...........</p>
-		</div>
-		
-		<div class="articleInner">
-			<a class="openArticle" ><h1>人之初性本善</h1></a>
-			<p>這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字...........</p>
-		</div>
-
-
-		
 		
 	</div>
 
 <!--打開文章後的顯示方塊 -->
 	<div id="realArticle">
-	  <h1>人之初性本善</h1></a>
-			<p>這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字...........</p>
-			<p>這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字...........</p>
-			<p>這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字...........</p>
-			<p>這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字...........</p>
-			<p>這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字...........</p>
-			<p>這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字這是測試文字...........</p>
+	 <div id="closeBtn" style="color:white;position:fixed;width:20px;height:20px;background:red;">X</div>
+	 
 	</div>
 
 </body>
 
-
-<script type="text/javascript">
-
-var converter = new showdown.Converter();
-var re = /[^#]\w+|[^#][\u0800-\u9fa5]+/i;
-var re1 = /#\w+|#[\u0800-\u9fa5]+/i;
-
-
-	document.getElementById('menu').addEventListener('click',function(){
-		if(document.getElementById('menuContent').style.display!=='flex'){
-		  document.getElementById('menuContent').style.display = 'flex';
-		  document.getElementById('menu').style.display = 'none';
-	    }else{
-	      document.getElementById('menuContent').style.display = 'none';
-	    }
-	})
-window.addEventListener('click',function(e){
-	if(e.target.id!=='menu'&&e.target.innerHTML!=='選單'){
-		document.getElementById('menuContent').style.display = 'none';
-		document.getElementById('menu').style.display = 'block';
-	}
-
-	if(e.target.id!=='realArticle'&&e.target.nodeName!=='H1'&&e.target.nodeName!=='P'&&e.target.parentNode.id!=='realArticle'&&e.target.parentNode.className!=='language-js'){
-		document.getElementById('realArticle').style.display = 'none';
-		document.body.style.background = 'white';
-	}
-
-})
-
-
-
-//選單導航
-document.getElementById('home').addEventListener('click',function(){
-	document.body.style.display = 'none';
-	 window.location.href ="./index.html";
-})
-
-document.getElementById('About').addEventListener('click',function(){
-	document.body.style.display = 'none';
-	 window.location.href ="http://www.w3schools.com";
-})
-
-//因document.getElementsByClassName返回的是類陣列，不是陣列，所以沒有foreach方法
-Array.prototype.forEach.call(document.getElementsByClassName('openArticle'),function(item){
-	item.addEventListener('click',function(){
-		document.getElementById('realArticle').style.display = 'block';
-		document.body.style.background = 'gray';
-	})
-})
-
-
-
-
-//Ajax讀取頁面
-loadhtml = function(url,callback) {
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (xhttp.readyState == 4 && xhttp.status == 200) {
-   
-     var  response =  xhttp.responseText;
-     //將response訊息傳入callback
-     
-      (callback)(response);
-
-      };
-  };
-  xhttp.open("GET", url, true);
-  xhttp.send();
-
-
-};
-loadhtml('./article/test5.md',function(e){
-console.log(e)
-})
-
-for( i = 3;i>0;i--){
-  (function (i){
-    loadhtml('./article/test'+i+'.md',function(e){
-  	 
-var node = document.createElement("DIV"); 
-var node1 = document.createElement("A");
-var node2 = document.createElement("H1"); 
-var node3 = document.createElement("P"); 
-node.setAttribute('class','articleInner');
-node1.setAttribute('class','openArticle');
-node2.setAttribute('class','title');
-node2.setAttribute('id',i);
-node2.innerHTML = e.match(re);
-node3.innerHTML = converter.makeHtml(e.replace(re1,""));
-node1.appendChild(node2);
-node1.appendChild(node3);
-node.appendChild(node1);
-
-document.getElementById('articleContent').appendChild(node);
-  		/*
-  		
-  		document.getElementById('realArticle').innerHTML =converter.makeHtml(e);
-  		*/
-  });})(i)
-}
-
-
-
-
-</script>
+	  <script type="text/javascript" src="./script/index.js"></script>
 </html>
