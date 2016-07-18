@@ -3,6 +3,8 @@
 
 <p style="color:gray;">2016.06.54 </p>
 
+大綱:如何處理git到一半無法繼續push的情況?
+
 通常會發生在add或commit到一半時終止，而產生此問題，
 
 原因是git會產生index.lock來避免git執行時出錯
