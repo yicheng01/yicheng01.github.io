@@ -3,7 +3,7 @@ var articles = [];
 var converter = new showdown.Converter();
 var re = /[^#][\w\u0800-\u9fa5]+/i;
 var re1 = /#[\w\u0800-\u9fa5]+/i;
-var re2 = /大綱:[\w\u0800-\u9fa5\s]+.../i;
+var re2 = /[\n]+.../i;
 
 //開啟導航列
 	document.getElementById('menu').addEventListener('click',function(){
@@ -131,7 +131,8 @@ function sdf(i,e){
 	node2.setAttribute('id',i);
 	node2.innerHTML = e.match(re);
 	var md1 = e.replace(re1,"");
-	var md2 = md1.match(re2);
+	console.log(md1)
+	var md2 = md1
 	node3.innerHTML = md2;
 	node1.appendChild(node2);
 	node1.appendChild(node3);

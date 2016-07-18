@@ -3,6 +3,8 @@
 
 <p style="color:gray;">2016.06.54 </p>
 
+<img src="./img/test2.png" height="400" width="600"></img>
+
 大綱:如何處理git到一半無法繼續push的情況?
 
 通常會發生在add或commit到一半時終止，而產生此問題，
@@ -11,7 +13,7 @@
 
 只要將index.lock刪除即可
 
-以下為windows處理方法
+以下為windows處理方法...
 <pre class="prettyprint"><code class="language-js">
 
 cd .git
