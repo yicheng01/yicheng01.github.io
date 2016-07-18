@@ -3,11 +3,12 @@ var articles = [];
 var converter = new showdown.Converter();
 var re = /[^#][\w\u0800-\u9fa5]+/i;
 var re1 = /#[\w\u0800-\u9fa5]+/i;
+var re2 = /大綱:[\w\u0800-\u9fa5\s]+.../i;
 
 //開啟導航列
 	document.getElementById('menu').addEventListener('click',function(){
 		if(document.getElementById('menuContent').style.display!=='flex'){
-		  document.getElementById('menuContent').style.display = 'flex';
+		  document.getElementById('menuContent').style.display = 'inline-flex';
 		  document.getElementById('menu').style.display = 'none';
 	    }else{
 	      document.getElementById('menuContent').style.display = 'none';
@@ -80,8 +81,6 @@ function loadhtml(url,callback) {
 };
 
 
-
-//讀取資料夾內的文章到首頁
 for(let i = TotalArticleNumber;i>0;i--){
  
     loadhtml('./article/test'+i+'.md',function(e){
@@ -117,6 +116,8 @@ for(let i = TotalArticleNumber;i>0;i--){
   };
 
 
+
+//讀取資料夾內的文章到首頁
 function sdf(i,e){
 
 	var node = document.createElement("DIV"); 
@@ -129,7 +130,9 @@ function sdf(i,e){
 	node2.setAttribute('class','title');
 	node2.setAttribute('id',i);
 	node2.innerHTML = e.match(re);
-	node3.innerHTML = converter.makeHtml(e.replace(re1,""));
+	var md1 = e.replace(re1,"");
+	var md2 = md1.match(re2);
+	node3.innerHTML = md2;
 	node1.appendChild(node2);
 	node1.appendChild(node3);
 	node.appendChild(node1);
