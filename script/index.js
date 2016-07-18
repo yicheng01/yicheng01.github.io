@@ -1,8 +1,8 @@
 var TotalArticleNumber = 3;
 var articles = [];
 var converter = new showdown.Converter();
-var re = /[^#]\w+|[^#][\u0800-\u9fa5]+/i;
-var re1 = /#\w+|#[\u0800-\u9fa5]+/i;
+var re = /[^#][\w\u0800-\u9fa5]+/i;
+var re1 = /#[\w\u0800-\u9fa5]+/i;
 
 //開啟導航列
 	document.getElementById('menu').addEventListener('click',function(){
