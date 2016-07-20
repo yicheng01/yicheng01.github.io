@@ -80,9 +80,10 @@ function loadhtml(url,callback) {
 
 };
 
+function readloops(){
+  var i = TotalArticleNumber;
 
-for(let i = TotalArticleNumber;i>0;i--){
- 
+  while (i > 0) {
     loadhtml('./article/test'+i+'.md',function(e){
 	 sdf(i,e)
 	 articles.push(e);
@@ -122,13 +123,13 @@ for(let i = TotalArticleNumber;i>0;i--){
 		
 
 	  	}
+
 	 })
-	  		/*
+      i--;
 	  		
-	  		document.getElementById('realArticle').innerHTML =converter.makeHtml(e);
-	  		*/
-	  		
-  };
+	};	
+	
+};
     /**
      *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
      *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
@@ -139,7 +140,7 @@ for(let i = TotalArticleNumber;i>0;i--){
         this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     };
     */
-
+readloops();
 
 
 
