@@ -94,10 +94,9 @@ var step = function(i){
 			item.addEventListener('click',function(){
 				
 				if(document.getElementById('content')!==null){
-					console.log(document.getElementById('realArticle').childNodes)
-					document.getElementById('realArticle').removeChild(document.getElementById('content')); 
-					document.getElementById('realArticle').removeChild(document.getElementById('disqus_thread'));
-					document.getElementById('realArticle').removeChild(document.getElementById('disqus_threadScript'));
+					
+					document.getElementById('realArticle').innerHTML = "";
+				
 				}
 			  loadhtml('./article/test'+item.id+'.html',function(e){
 			  	 var node3 = document.createElement("P");
