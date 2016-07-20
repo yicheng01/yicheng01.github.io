@@ -101,7 +101,6 @@ for(let i = TotalArticleNumber;i>0;i--){
 			  	 node4.setAttribute('id','disqus_thread')
 			  	 node3.innerHTML = converter.makeHtml(e);
 			  	 document.getElementById('realArticle').appendChild(node3);
-                 document.getElementById('realArticle').appendChild(node4);
 			  	 document.getElementById('realArticle').style.display = 'block';
 		         document.body.style.background = 'gray';
 		         })
