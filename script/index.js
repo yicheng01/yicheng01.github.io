@@ -92,7 +92,7 @@ var step = function(i){
 	 if(articles.length==TotalArticleNumber){
 	  	  Array.prototype.forEach.call(document.getElementsByClassName('title'),function(item){
 			item.addEventListener('click',function(){
-				history.pushState({ page: "test"+i },"", "test"+i+'.html');
+				history.pushState({ page: "test"+item.id },"", "test"+item.id+'.html');
 				if(document.getElementById('content')!==null){
 					console.log(document.getElementById('realArticle').childNodes)
 					document.getElementById('realArticle').removeChild(document.getElementById('content')); 
