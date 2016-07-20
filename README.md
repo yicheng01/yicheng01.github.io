@@ -6,11 +6,11 @@
 
 2.article的內容第一行為文章title  加上#
 
-3.文章title後放一張圖片 600寬x400高
+3.文章title後放一張圖片 600寬x400高，路徑要使用絕對路徑(因pushState後才找的到)
 
 
 
 
 
 筆記:
-原文當的檔案為md，但為了SEO所以使用html，`https://yicheng01.github.io/article/test1`及可連到文章
+1.原本文章的檔案為md，但為了SEO所以改為html，使用`https://yicheng01.github.io/article/test1`及可連到文章

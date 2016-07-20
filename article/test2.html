@@ -1,6 +1,57 @@
 
-#今天走到便利商店買麵包
+#於HTML加入disqus留言
 
-<p style="color:gray;">2016.06.54 </p>
+<p style="color:gray;">2015.06.07 </p>
 
-大綱:今天晚餐吃麵...
+
+<img src="https://yicheng01.github.io/img/test2.png" height="280" width="400"></img>
+
+大綱:以下稍微簡介如何使用disqus
+
+###1.https://disqus.com/  註冊帳號
+
+###2.之後點選disqus首頁右上方的admin，之後點選上方的setting
+
+###3.點選左側installation，選Universal code
+
+###4.在頁面上以下code
+
+<pre class="prettyprint"><code class="language-js">
+
+<div id="disqus_thread"></div>
+<script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+    /*
+    var disqus_config = function () {
+        this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+    (function() {  // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        
+        s.src = '//yicheng01blog.disqus.com/embed.js';
+        
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+</code></pre>
+
+#需要注意的是:
+
+需使用部屬好的server來render此網頁才可正常顯示disqus(在本機無法測試)
+
+###disqus_config
+
+可有可無，預設不用，其預設會按照你的不同url載入不同的留言
+
+可參考
+
+`https://help.disqus.com/customer/en/portal/articles/2158629`
