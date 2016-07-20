@@ -83,7 +83,7 @@ function loadhtml(url,callback) {
 var step = function(i){
    if( i > 0 ) {
 	loadhtml('./article/test'+i+'.md',function(e){
-	 sdf(i,e)
+	 sdf(i,e)//讀取資料夾內的文章到首頁
 	 articles.push(e);
 
 	 //讀取完md且append到DOM後的callback
@@ -91,27 +91,22 @@ var step = function(i){
 	  	  Array.prototype.forEach.call(document.getElementsByClassName('title'),function(item){
 			item.addEventListener('click',function(){
 				if(document.getElementById('content')!==null){
-					document.getElementById('realArticle').removeChild(document.getElementById('realArticle').childNodes[3]); 
+					console.log(document.getElementById('realArticle').childNodes)
+					document.getElementById('realArticle').removeChild(document.getElementById('content')); 
 				}
 			  loadhtml('./article/test'+item.id+'.md',function(e){
 			  	 var node3 = document.createElement("P");
 			  	 var node4 = document.createElement("div");
 			  	 var node5 = document.createElement("script");
+
 			  	 node3.setAttribute('id','content');
 			  	 node4.setAttribute('id','disqus_thread');
-			  	 node5.innerHTML = ` (function() {  // DON'T EDIT BELOW THIS LINE
-        var d = document, s = d.createElement('script');
-        
-        s.src = '//yicheng01blog.disqus.com/embed.js';
-        
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();`;
+                 node5.innerHTML = ` (function() { var d = document, s = d.createElement('script'); s.src = '//yicheng01blog.disqus.com/embed.js';s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);})();`;
 			  	 node3.innerHTML = converter.makeHtml(e);
+
 			  	 document.getElementById('realArticle').appendChild(node3);
                  document.getElementById('realArticle').appendChild(node4);
-
-                 document.getElementById('realArticle').appendChild(node5);
+				 document.getElementById('realArticle').appendChild(node5);
 			  	 document.getElementById('realArticle').style.display = 'block';
 		         document.body.style.background = 'gray';
 		         })
@@ -146,8 +141,7 @@ function sdf(i,e){
 	node2.setAttribute('id',i);
 	node2.innerHTML = e.match(re);
 	var md1 = e.replace(re1,"");
-	console.log(md1)
-	var md2 = md1
+	var md2 = md1;
 	node3.innerHTML = md2;
 	node1.appendChild(node2);
 	node1.appendChild(node3);
