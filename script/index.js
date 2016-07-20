@@ -92,7 +92,7 @@ var step = function(i){
 	 if(articles.length==TotalArticleNumber){
 	  	  Array.prototype.forEach.call(document.getElementsByClassName('title'),function(item){
 			item.addEventListener('click',function(){
-				history.replaceState({ page: "article/test"+item.id },"", "test"+item.id+'.html');
+				history.pushState({ page: "article/test"+item.id },"", "test"+item.id+'.html');
 				if(document.getElementById('content')!==null){
 					console.log(document.getElementById('realArticle').childNodes)
 					document.getElementById('realArticle').removeChild(document.getElementById('content')); 
@@ -170,5 +170,5 @@ sdf().then(function(){
 
 */
 window.onbeforeunload = function(e) {
-  console.log('reload')
+  history.pushState({ page: "article/test"+item.id },"", "article/test"+item.id+'.html');
 };
