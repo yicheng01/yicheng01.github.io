@@ -96,15 +96,19 @@ for(let i = TotalArticleNumber;i>0;i--){
 				}
 			  loadhtml('./article/test'+item.id+'.md',function(e){
 			  	 var node3 = document.createElement("P");
+			  	 var node4 = document.createElement("div");
 			  	 node3.setAttribute('id','content')
 			  	 node3.innerHTML = converter.makeHtml(e);
+			  	 node4.innerHTML = '<div id="disqus_thread"></div>';
 			  	 document.getElementById('realArticle').appendChild(node3);
+                 document.getElementById('realArticle').appendChild(node4);
 			  	 document.getElementById('realArticle').style.display = 'block';
 		         document.body.style.background = 'gray';
+		         })
 			  });
 	        
 			})
-		  })
+		
 
 	  	}
 	 })
@@ -114,6 +118,24 @@ for(let i = TotalArticleNumber;i>0;i--){
 	  		*/
 	  		
   };
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+    /*
+    var disqus_config = function () {
+        this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+    (function() {  // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        
+        s.src = 'http://yicheng01blog.disqus.com/embed.js';
+        
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
 
 
 
