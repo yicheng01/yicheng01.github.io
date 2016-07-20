@@ -25,6 +25,7 @@ window.addEventListener('click',function(e){
 	if(e.target.id!=='realArticle'&&e.target.nodeName!=='H1'&&e.target.nodeName!=='P'&&e.target.parentNode.id!=='realArticle'&&e.target.parentNode.className!=='language-js'){
 		document.getElementById('realArticle').style.display = 'none';
 		document.body.style.background = 'white';
+		history.pushState({ page: "index.html"},"", 'index.html');
 	}
 
 })
@@ -33,6 +34,7 @@ window.addEventListener('click',function(e){
 document.getElementById('closeBtn').addEventListener('click',function(){
 	document.getElementById('realArticle').style.display = 'none';
 	document.body.style.background = 'white';
+	history.pushState({ page: "index.html"},"", 'index.html');
 })
 
 
@@ -90,7 +92,7 @@ var step = function(i){
 	 if(articles.length==TotalArticleNumber){
 	  	  Array.prototype.forEach.call(document.getElementsByClassName('title'),function(item){
 			item.addEventListener('click',function(){
-				history.pushState({ page: "test"+i },"", "test"+i);
+				history.pushState({ page: "test"+i },"", "test"+i+'.html');
 				if(document.getElementById('content')!==null){
 					console.log(document.getElementById('realArticle').childNodes)
 					document.getElementById('realArticle').removeChild(document.getElementById('content')); 
