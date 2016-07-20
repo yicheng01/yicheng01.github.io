@@ -99,7 +99,7 @@ var step = function(i){
 					document.getElementById('realArticle').removeChild(document.getElementById('disqus_thread'));
 					document.getElementById('realArticle').removeChild(document.getElementById('disqus_threadScript'));
 				}
-			  loadhtml('./article/test'+item.id+'.md',function(e){
+			  loadhtml('./article/test'+item.id+'.html',function(e){
 			  	 var node3 = document.createElement("P");
 			  	 var node4 = document.createElement("div");
 			  	 var node5 = document.createElement("script");
