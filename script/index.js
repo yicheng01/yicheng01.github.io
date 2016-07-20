@@ -81,7 +81,7 @@ function loadhtml(url,callback) {
 
 
 };
-
+console.log(2)
 var step = function(i){
    if( i > 0 ) {
 	loadhtml('./article/test'+i+'.html',function(e){
@@ -92,7 +92,7 @@ var step = function(i){
 	 if(articles.length==TotalArticleNumber){
 	  	  Array.prototype.forEach.call(document.getElementsByClassName('title'),function(item){
 			item.addEventListener('click',function(){
-				history.replaceState({ page: "article/test"+item.id },"", "test"+item.id+'.html');
+				history.replaceState({ page: "article/test"+item.id },"", '');
 				if(document.getElementById('content')!==null){
 					console.log(document.getElementById('realArticle').childNodes)
 					document.getElementById('realArticle').removeChild(document.getElementById('content')); 
