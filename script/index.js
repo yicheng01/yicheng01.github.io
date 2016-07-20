@@ -98,6 +98,7 @@ for(let i = TotalArticleNumber;i>0;i--){
 			  	 var node3 = document.createElement("P");
 			  	 var node4 = document.createElement("div");
 			  	 node3.setAttribute('id','content')
+			  	 node4.setAttribute('id','disqus_thread')
 			  	 node3.innerHTML = converter.makeHtml(e);
 			  	 document.getElementById('realArticle').appendChild(node3);
                  document.getElementById('realArticle').appendChild(node4);
