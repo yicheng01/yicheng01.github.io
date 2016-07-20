@@ -25,7 +25,7 @@ window.addEventListener('click',function(e){
 	if(e.target.id!=='realArticle'&&e.target.nodeName!=='H1'&&e.target.nodeName!=='P'&&e.target.parentNode.id!=='realArticle'&&e.target.parentNode.className!=='language-js'){
 		document.getElementById('realArticle').style.display = 'none';
 		document.body.style.background = 'white';
-		history.pushState({ page: "index.html"},"", '');
+		history.replaceState({ page: "index.html"},"", '');
 	}
 
 })
@@ -34,7 +34,7 @@ window.addEventListener('click',function(e){
 document.getElementById('closeBtn').addEventListener('click',function(){
 	document.getElementById('realArticle').style.display = 'none';
 	document.body.style.background = 'white';
-	history.pushState({ page: "index.html"},"", '');
+	history.replaceState({ page: "index.html"},"", '');
 })
 
 
@@ -81,7 +81,7 @@ function loadhtml(url,callback) {
 
 
 };
-console.log(2)
+console.log(22)
 var step = function(i){
    if( i > 0 ) {
 	loadhtml('./article/test'+i+'.html',function(e){
