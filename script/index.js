@@ -93,6 +93,8 @@ var step = function(i){
 				if(document.getElementById('content')!==null){
 					console.log(document.getElementById('realArticle').childNodes)
 					document.getElementById('realArticle').removeChild(document.getElementById('content')); 
+					document.getElementById('realArticle').removeChild(document.getElementById('disqus_thread'));
+					document.getElementById('realArticle').removeChild(document.getElementById('disqus_threadScript'));
 				}
 			  loadhtml('./article/test'+item.id+'.md',function(e){
 			  	 var node3 = document.createElement("P");
@@ -101,6 +103,7 @@ var step = function(i){
 
 			  	 node3.setAttribute('id','content');
 			  	 node4.setAttribute('id','disqus_thread');
+			  	 node5.setAttribute('id','disqus_threadScript');
                  node5.innerHTML = ` (function() { var d = document, s = d.createElement('script'); s.src = '//yicheng01blog.disqus.com/embed.js';s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);})();`;
 			  	 node3.innerHTML = converter.makeHtml(e);
 
