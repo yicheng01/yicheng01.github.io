@@ -1,9 +1,9 @@
-var TotalArticleNumber = 3;
+var TotalArticleNumber = 4;
 var articles = [];
 var converter = new showdown.Converter();
 var re = /[^#][\w\u0800-\u9fa5]+/i;
 var re1 = /#[\w\u0800-\u9fa5]+/i;
-var re2 = /[\n]+.../i;
+var re2 = /[\s\S]*大綱:[\s\S]*\.\.\./g;
 
 //開啟導航列
 	document.getElementById('menu').addEventListener('click',function(){
@@ -81,7 +81,7 @@ function loadhtml(url,callback) {
 
 
 };
-console.log(22)
+
 var step = function(i){
    if( i > 0 ) {
 	loadhtml('./article/test'+i+'.html',function(e){
@@ -147,7 +147,7 @@ function sdf(i,e){
 	node2.setAttribute('id',i);
 	node2.innerHTML = e.match(re);
 	var md1 = e.replace(re1,"");
-	var md2 = md1;
+	var md2 = md1.match(re2);
 	node3.innerHTML = md2;
 	node1.appendChild(node2);
 	node1.appendChild(node3);
