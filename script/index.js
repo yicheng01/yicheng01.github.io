@@ -55,8 +55,10 @@ document.getElementById('Github').addEventListener('click',function(){
 //因document.getElementsByClassName返回的是類陣列，不是陣列，所以沒有foreach方法
 Array.prototype.forEach.call(document.getElementsByClassName('openArticle'),function(item){
 	item.addEventListener('click',function(){
+		if(document.getElementById('realArticle').style.display !== 'block'){
 		document.getElementById('realArticle').style.display = 'block';
 		document.body.style.background = 'gray';
+	    }
 	})
 })
 
