@@ -25,17 +25,13 @@ window.addEventListener('click',function(e){
 	if(e.target.id!=='realArticle'&&e.target.nodeName!=='H1'&&e.target.nodeName!=='P'&&e.target.parentNode.id!=='realArticle'&&e.target.parentNode.className!=='language-js'){
 		document.getElementById('realArticle').style.display = 'none';
 		document.body.style.background = 'white';
+		if(window.location.pathname!=='/'){
 		window.history.go(-1);
+	    }
 	}
 
 })
 
-//紅色叉叉關閉文章
-document.getElementById('closeBtn').addEventListener('click',function(){
-	document.getElementById('realArticle').style.display = 'none';
-	document.body.style.background = 'white';
-	window.history.go(-1);
-})
 
 
 
