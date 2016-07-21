@@ -24,7 +24,7 @@ window.addEventListener('click',function(e){
 
 	if(e.target.id!=='realArticle'&&e.target.nodeName!=='H1'&&e.target.nodeName!=='P'&&e.target.parentNode.id!=='realArticle'&&e.target.parentNode.className!=='language-js'){
 		document.getElementById('realArticle').style.display = 'none';
-		document.body.style.b ackground = 'white';
+		document.body.style.background = 'white';
 		if(window.location.pathname!=='/'&&window.location.pathname!=='/index.html'&&window.location.pathname!=='/about.html'&&window.location.pathname!=='/archive.html'){
 		window.history.go(-1);
 	    }
