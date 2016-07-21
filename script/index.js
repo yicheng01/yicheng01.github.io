@@ -24,7 +24,7 @@ window.addEventListener('click',function(e){
 
 	if(e.target.id!=='realArticle'&&e.target.nodeName!=='H1'&&e.target.nodeName!=='P'&&e.target.parentNode.id!=='realArticle'&&e.target.parentNode.className!=='language-js'){
 		document.getElementById('realArticle').style.display = 'none';
-		document.body.style.background = 'white';
+		document.body.style.b ackground = 'white';
 		if(window.location.pathname!=='/'&&window.location.pathname!=='/index.html'&&window.location.pathname!=='/about.html'&&window.location.pathname!=='/archive.html'){
 		window.history.go(-1);
 	    }
@@ -47,6 +47,10 @@ document.getElementById('About').addEventListener('click',function(){
 document.getElementById('Archive').addEventListener('click',function(){
 	document.body.style.display = 'none';
 	 window.location.href ="./archive.html";
+})
+document.getElementById('Github').addEventListener('click',function(){
+	document.body.style.display = 'none';
+	 window.open("https://github.com/EasonWang01");
 })
 
 //因document.getElementsByClassName返回的是類陣列，不是陣列，所以沒有foreach方法
