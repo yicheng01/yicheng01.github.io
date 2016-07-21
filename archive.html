@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Archive</title>
+	<style type="text/css">
+
+	html{
+		margin-top: 0px;
+		width:100%;
+		height:100%;
+	}
+	body{
+		width:100%;
+		height:100%;
+		display: flex;
+
+	}
+	#menu{
+
+		margin-top: -10px;
+		opacity: 0.5;
+		position: fixed;
+		text-align: center;
+		background: #30E496;
+		max-width: 65px;
+		font-family:Microsoft JhengHei;
+		border: 2px dashed black;
+	}
+	#menu:hover{
+		opacity: 1;
+		background:#00ffff;
+		transition:all 0.5s linear ;
+		 transform: scale(1.3);
+
+	}
+	#menuContent{
+		display: none;
+		flex-direction: column;
+		width: 10%;
+		border: 5px dashed black;
+		position: fixed;
+		background:#e6ffff;
+	}
+	.menuItem:hover{
+		background: #99ffff;
+	}
+	a{
+	  text-decoration: none;
+	  color: black;
+	}
+	h1{
+		display: inline-block;
+		font-family:Microsoft JhengHei;
+	}
+	h2{
+		font-size:100%;
+	}
+	p{
+		font-family: "Microsoft JhengHei";
+		font-size:25px;
+	}
+	img{
+		display:block; 
+		margin:auto;
+	}
+    #articleContent{
+    	width:auto;
+    	height:100%;
+    	margin-left:25%;
+    	margin-right:5%; 
+    	text-align:center;
+    }
+    .articleInner{
+		border-bottom:1px solid black;
+		max-height: 95%;
+		overflow-y: hidden;
+	}
+    #realArticle{
+    	position:fixed;
+    	top:5%;
+    	left:0px;
+    	margin-left:15%; 
+    	width:70%;
+    	height: 100%;
+    	background: white;
+    	overflow: scroll;
+    	display: none;
+    }
+    .title{
+    	color:black;
+    	font-size: 45px;
+    }
+    .title:hover{
+    	color:#00a3cc;
+    	text-decoration: underline;
+    	text-decoration-color: yellow;
+    }
+
+
+
+
+
+/*@media only   */ 
+	@media only screen and (max-width: 601px) {
+	body{
+		width:95%;
+		height:100%;
+		display:block;	
+
+	}
+	#menuContent{
+		display: none;
+		flex-direction: column;
+		width: auto;
+		border: 5px dashed black;
+	}
+	#articleContent{
+    
+    	margin-left:0%;
+    }
+    #menu{
+    	margin-top: -25px;
+    }
+}
+
+/*@media only   */ 
+
+</style>
+</head>
+<body>
+	<div id="menu"><h3>選單</h3> </div>
+	<div id="menuContent"> 
+
+		<div id="home" class="menuItem" style="width: 100%;
+		align-items: center;"><h2  style="text-align: center">Home</h2></div>
+
+		<div id="About" class="menuItem" style="width: 100%;
+		align-items: center;"><h2 style="text-align: center">About</h2></div>
+		
+		<div id="Archive" class="menuItem" style="width: 100%;
+		align-items: center;"><h2 style="text-align: center">Archive</h2></div>
+
+		<div id="Github" class="menuItem" style="width: 100%;
+		align-items: center;"><h2 style="text-align: center">Github</h2></div>
+
+
+	</div>
+
+<script>
+	document.getElementById('menu').addEventListener('click',function(){
+		if(document.getElementById('menuContent').style.display!=='flex'){
+			  document.getElementById('menuContent').style.display = 'inline-flex';
+			  document.getElementById('menu').style.display = 'none';
+		}else{
+		      document.getElementById('menuContent').style.display = 'none';
+		    }
+		})
+
+
+	window.addEventListener('click',function(e){
+		if(e.target.id!=='menu'&&e.target.innerHTML!=='選單'){
+			document.getElementById('menuContent').style.display = 'none';
+			document.getElementById('menu').style.display = 'block';
+		}
+    })
+
+
+
+
+    document.getElementById('home').addEventListener('click',function(){
+	document.body.style.display = 'none';
+	 window.location.href ="./index.html";
+    })
+
+	document.getElementById('About').addEventListener('click',function(){
+		document.body.style.display = 'none';
+		 window.location.href ="./about.html";
+	})
+
+	document.getElementById('Archive').addEventListener('click',function(){
+		document.body.style.display = 'none';
+		 window.location.href ="./archive.html";
+	})
+</script>
+</body>
+</html>
