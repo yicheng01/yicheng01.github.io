@@ -49,7 +49,6 @@ document.getElementById('Archive').addEventListener('click',function(){
 	 window.location.href ="./archive.html";
 })
 document.getElementById('Github').addEventListener('click',function(){
-	document.body.style.display = 'none';
 	 window.open("https://github.com/EasonWang01");
 })
 
