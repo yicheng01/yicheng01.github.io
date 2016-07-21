@@ -78,7 +78,6 @@ function loadhtml(url,callback) {
   xhttp.open("GET", url, true);
   xhttp.send();
 };
-
 var step = function(i){
 
 	if(i>1){
@@ -86,6 +85,8 @@ var step = function(i){
 	}
 
    if( i > 0 ) {
+   	
+document.getElementById('myBar').style.width = 'calc(100%/'+i')';
    	console.log(i)
 	loadhtml('./article/test'+i+'.html',function(e){
 	 sdf(i,e)//讀取資料夾內的文章到首頁
