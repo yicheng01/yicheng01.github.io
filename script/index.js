@@ -99,14 +99,7 @@ document.getElementById('myBar').style.width = 'calc(100%/'+i+')';
 	 	document.getElementById('articleContent').style.display ='block'; //讀取文章完才顯示文章
 	  	  Array.prototype.forEach.call(document.getElementsByClassName('title'),function(item){
 			item.addEventListener('click',function(){
-				
-				if(document.getElementById('content')!==null){
-					
-					if(document.getElementById('realArticle').style.display !== 'block'){
-					document.getElementById('realArticle').innerHTML = "";
-				    }
-				
-				}
+
 			  loadhtml('./article/test'+item.id+'.html',function(e){
 			  	 var node3 = document.createElement("P");
 			  	 var node4 = document.createElement("div");
@@ -124,7 +117,16 @@ document.getElementById('myBar').style.width = 'calc(100%/'+i+')';
 			  	 document.getElementById('realArticle').style.display = 'block';
 		         document.body.style.background = 'gray';
 		         })
-			  history.pushState({ page: "article/test"+item.id },"", "article/test"+item.id+'.html');
+
+				if(document.getElementById('content')!==null){
+					
+					if(document.getElementById('realArticle').style.display !== 'block'){
+					document.getElementById('realArticle').innerHTML = "";
+					history.pushState({ page: "article/test"+item.id },"", "article/test"+item.id+'.html');
+				    }
+				
+				}
+			  
 			  });
 	        
 			})
