@@ -81,7 +81,7 @@ function loadhtml(url,callback) {
 
 var step = function(i){
 	if(i>1){
-		document.getElementById('articleContent').innerHTML = '讀取中';
+		document.getElementById('articleContent').style.display ='none'; 
 	}
 
    if( i > 0 ) {
