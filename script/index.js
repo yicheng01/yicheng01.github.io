@@ -91,6 +91,7 @@ var step = function(i){
 
 	 //讀取完md且append到DOM後的callback
 	 if(articles.length==TotalArticleNumber){
+	 	document.getElementById('articleContent').style.display ='block'; 
 	  	  Array.prototype.forEach.call(document.getElementsByClassName('title'),function(item){
 			item.addEventListener('click',function(){
 				
