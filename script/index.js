@@ -40,10 +40,13 @@ document.getElementById('home').addEventListener('click',function(){
 	document.body.style.display = 'none';
 	 window.location.href ="./index.html";
 })
-
 document.getElementById('About').addEventListener('click',function(){
 	document.body.style.display = 'none';
 	 window.location.href ="./about.html";
+})
+document.getElementById('Archive').addEventListener('click',function(){
+	document.body.style.display = 'none';
+	 window.location.href ="./archive.html";
 })
 
 //因document.getElementsByClassName返回的是類陣列，不是陣列，所以沒有foreach方法
