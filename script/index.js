@@ -65,26 +65,25 @@ Array.prototype.forEach.call(document.getElementsByClassName('openArticle'),func
 //Ajax讀取頁面
 function loadhtml(url,callback) {
   var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
+   xhttp.onreadystatechange = function() {
     if (xhttp.readyState == 4) {
-   if( xhttp.status == 200){
-     var  response =  xhttp.responseText;
+      if( xhttp.status == 200){
+        var  response =  xhttp.responseText;
      //將response訊息傳入callback
-     
-      (callback)(response);
+        (callback)(response);
 
       }
+   };
   };
-      
-  };
-
   xhttp.open("GET", url, true);
   xhttp.send();
-
-
 };
 
 var step = function(i){
+	if(i>1){
+		document.getElementById('articleContent').innerHTML = '讀取中';
+	}
+
    if( i > 0 ) {
 	loadhtml('./article/test'+i+'.html',function(e){
 	 sdf(i,e)//讀取資料夾內的文章到首頁
