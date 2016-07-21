@@ -86,6 +86,7 @@ var step = function(i){
 	}
 
    if( i > 0 ) {
+   	console.log(i)
 	loadhtml('./article/test'+i+'.html',function(e){
 	 sdf(i,e)//讀取資料夾內的文章到首頁
 	 articles.push(e);
