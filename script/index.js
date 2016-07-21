@@ -80,8 +80,9 @@ function loadhtml(url,callback) {
 };
 
 var step = function(i){
+
 	if(i>1){
-		document.getElementById('articleContent').style.display ='none'; 
+		document.getElementById('articleContent').style.display ='none'; //讀取文章完才顯示文章
 	}
 
    if( i > 0 ) {
@@ -90,8 +91,9 @@ var step = function(i){
 	 articles.push(e);
 
 	 //讀取完md且append到DOM後的callback
-	 if(articles.length==TotalArticleNumber){
-	 	document.getElementById('articleContent').style.display ='block'; 
+	 if(articles.length==TotalArticleNumber){//設了一個array來把讀完的文章放進去
+	 	document.getElementById('myProgress').style.display ='none';
+	 	document.getElementById('articleContent').style.display ='block'; //讀取文章完才顯示文章
 	  	  Array.prototype.forEach.call(document.getElementsByClassName('title'),function(item){
 			item.addEventListener('click',function(){
 				
